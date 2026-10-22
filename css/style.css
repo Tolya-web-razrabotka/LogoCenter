@@ -927,9 +927,6 @@ body .sectionTitleLarge {
 	display: block;
 	pointer-events: none;
 	user-select: none;
-	transform-origin: right bottom;
-	transition: transform .7s cubic-bezier(.22, .61, .36, 1);
-	will-change: transform;
 }
 
 .servicesCardMaterials .servicesCardImg {
@@ -949,10 +946,6 @@ body .sectionTitleLarge {
 	height: 100%;
 	object-fit: cover;
 	object-position: left center;
-}
-
-.servicesCard:hover .servicesCardImg {
-	transform: scale(1.03);
 }
 
 .servicesCardStripe {
@@ -1419,11 +1412,6 @@ body .sectionTitleLarge {
 	background: #fff;
 	border-radius: 18px;
 	box-shadow: inset 0 0 0 1.5px #EFF3F6;
-	transition: box-shadow .3s;
-}
-
-.equipmentCard:hover {
-	box-shadow: inset 0 0 0 1.5px #EFF3F6, 0 10px 30px rgba(16, 41, 60, .08);
 }
 
 .equipmentCardImg {
@@ -1592,12 +1580,10 @@ body .sectionTitleLarge {
 	background: #F7F9FB;
 	border-radius: 18px;
 	box-shadow: inset 0 0 0 1px #EFF3F6;
-	transition: box-shadow .3s;
 }
 
 .materialsCard:hover,
 .materialsCard:focus {
-	box-shadow: inset 0 0 0 1px #EFF3F6, 0 10px 30px rgba(16, 41, 60, .08);
 	text-decoration: none;
 }
 
