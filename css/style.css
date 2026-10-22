@@ -1328,6 +1328,20 @@ body .sectionTitleLarge {
 	padding: 0 15px;
 }
 
+.cardsSlider .slick-list {
+	cursor: grab;
+}
+
+.cardsSlider .slick-list:active {
+	cursor: grabbing;
+}
+
+.cardsSlider img {
+	-webkit-user-drag: none;
+	user-select: none;
+	pointer-events: none;
+}
+
 .cardsSlider:not(.slick-initialized) {
 	display: flex;
 }
