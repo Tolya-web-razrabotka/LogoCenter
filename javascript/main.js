@@ -48,41 +48,56 @@ $(document).ready(function () {
 
 	// Слайдеры техники и материалов
 
+	var sliderMaxSlides = 4;
+
 	$('.cardsSliderWrap').each(function () {
-		var $slider = $(this).find('.cardsSlider');
-		$(this).find('.cardsSliderPrev').on('click', function () {
+		var $wrap = $(this);
+		var $slider = $wrap.find('.cardsSlider');
+		var $items = $slider.children('.cardsSliderItem');
+
+		// Пока карточек не больше, чем помещается на экран, slick не листает —
+		// дублируем набор, чтобы карусель крутилась по кругу
+		if ($items.length && $items.length <= sliderMaxSlides) {
+			$items.clone().addClass('cardsSliderItemClone').appendTo($slider);
+		}
+
+		$slider.slick({
+			slidesToShow: sliderMaxSlides,
+			slidesToScroll: 1,
+			infinite: true,
+			speed: 400,
+			arrows: false,
+			draggable: true,
+			swipe: true,
+			swipeToSlide: true,
+			touchThreshold: 8,
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 3
+					}
+				},
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 601,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
+		});
+
+		$wrap.find('.cardsSliderPrev').on('click', function () {
 			$slider.slick('slickPrev');
 		});
-		$(this).find('.cardsSliderNext').on('click', function () {
+		$wrap.find('.cardsSliderNext').on('click', function () {
 			$slider.slick('slickNext');
 		});
-	});
-
-	$('.cardsSlider').slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		infinite: true,
-		speed: 400,
-		arrows: false,
-		responsive: [
-			{
-				breakpoint: 1200,
-				settings: {
-					slidesToShow: 3
-				}
-			},
-			{
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 2
-				}
-			},
-			{
-				breakpoint: 601,
-				settings: {
-					slidesToShow: 1
-				}
-			}
-		]
 	});
 });
