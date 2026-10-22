@@ -927,7 +927,9 @@ body .sectionTitleLarge {
 	display: block;
 	pointer-events: none;
 	user-select: none;
-	transition: transform .6s;
+	transform-origin: right bottom;
+	transition: transform .7s cubic-bezier(.22, .61, .36, 1);
+	will-change: transform;
 }
 
 .servicesCardMaterials .servicesCardImg {
@@ -951,7 +953,6 @@ body .sectionTitleLarge {
 
 .servicesCard:hover .servicesCardImg {
 	transform: scale(1.03);
-	transform-origin: right bottom;
 }
 
 .servicesCardStripe {
