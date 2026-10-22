@@ -1937,6 +1937,131 @@ a.footerContact:focus {
 }
 
 
+/* --- Callback modal --- */
+
+.callbackModal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 200;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 20px;
+	overflow-y: auto;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .4s, visibility .4s;
+}
+
+.callbackModalOverlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(16, 41, 60, .6);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
+.callbackModalBox {
+	position: relative;
+	width: 690px;
+	max-width: 100%;
+	margin: auto;
+	padding: 40px 30px 30px;
+	background: #FEFEFF;
+	border-radius: 20px;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, .1);
+	opacity: 0;
+	transform: translateY(30px) scale(.96);
+	transition: opacity .4s, transform .45s cubic-bezier(.22, .61, .36, 1);
+}
+
+body.modalOpen {
+	overflow: hidden;
+}
+
+.modalOpen .callbackModal {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modalOpen .callbackModalBox {
+	opacity: 1;
+	transform: none;
+}
+
+.callbackModalClose {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	background: #F1F5FB;
+	border-radius: 12px;
+	transition: background .3s, transform .3s;
+}
+
+.callbackModalClose span {
+	position: absolute;
+	top: calc(50% - 1px);
+	left: calc(50% - 10px);
+	width: 20px;
+	height: 2px;
+	background: #00091D;
+	border-radius: 1px;
+	transform: rotate(45deg);
+	transition: background .3s;
+}
+
+.callbackModalClose span+span {
+	transform: rotate(-45deg);
+}
+
+.callbackModalClose:hover,
+.callbackModalClose:focus {
+	background: var(--orange);
+	transform: rotate(90deg);
+	outline: none;
+}
+
+.callbackModalClose:hover span,
+.callbackModalClose:focus span {
+	background: #fff;
+}
+
+.callbackModalTitle {
+	margin-bottom: 15px !important;
+	padding-right: 50px;
+}
+
+.callbackModalText {
+	margin-bottom: 25px;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 23px;
+	color: #00091D;
+}
+
+.callbackModal .requestFormModal {
+	flex: none;
+	width: 100%;
+	padding: 0;
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.callbackModal .requestFormModal .requestFormTextarea {
+	height: 120px;
+}
+
+
 /* --- Float buttons --- */
 
 .floatButtons {
@@ -2814,6 +2939,30 @@ a.footerContact:focus {
 		align-items: flex-start;
 		gap: 10px;
 		text-align: left;
+	}
+
+	.callbackModal {
+		padding: 15px;
+	}
+
+	.callbackModalBox {
+		padding: 30px 20px 20px;
+	}
+
+	.callbackModalClose {
+		top: 15px;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+	}
+
+	.callbackModalText {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	.callbackModalText br {
+		display: none;
 	}
 }
 

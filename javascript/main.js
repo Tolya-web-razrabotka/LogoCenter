@@ -11,8 +11,37 @@ $(document).ready(function () {
 	$('.headerBurger').on('click', openMenu);
 	$('.mobileMenuClose, .mobileMenuOverlay, .mobileMenuNav a').on('click', closeMenu);
 	$(document).on('keydown', function (e) {
-		if (e.key === 'Escape') closeMenu();
+		if (e.key === 'Escape') {
+			closeMenu();
+			closeModal();
+		}
 	});
+
+	// Модалка обратной связи
+
+	var $modal = $('.callbackModal');
+	var $lastToggle = null;
+
+	function openModal($toggle) {
+		$lastToggle = $toggle;
+		closeMenu();
+		$('body').addClass('modalOpen');
+		$modal.attr('aria-hidden', 'false');
+		setTimeout(function () {
+			$modal.find('.requestFormInput').first().trigger('focus');
+		}, 400);
+	}
+	function closeModal() {
+		if (!$('body').hasClass('modalOpen')) return;
+		$('body').removeClass('modalOpen');
+		$modal.attr('aria-hidden', 'true');
+		if ($lastToggle) $lastToggle.trigger('focus');
+	}
+	$(document).on('click', '.callback-toggle', function (e) {
+		e.preventDefault();
+		openModal($(this));
+	});
+	$('.callbackModalClose, .callbackModalOverlay').on('click', closeModal);
 	$(window).on('resize', function () {
 		if ($(window).width() > 1279) closeMenu();
 	});
