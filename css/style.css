@@ -141,7 +141,7 @@ button {
 	gap: 32px;
 	margin: 0;
 	padding: 0 32px;
-	background: rgba(23, 52, 90, .75);
+	background: #164A6D;
 	border-radius: 14px;
 	list-style: none;
 	backdrop-filter: blur(10px);
@@ -150,7 +150,7 @@ button {
 .headerNav li a {
 	display: block;
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 50px;
 	text-transform: uppercase;
 	color: #fff;
@@ -595,10 +595,9 @@ body .mainBannerTitle {
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
-	width: 48px;
-	height: 48px;
+	width: 60px;
+	height: 60px;
 	background: linear-gradient(135deg, rgba(255, 255, 255, .28) 0%, rgba(255, 255, 255, .1) 100%);
-	border: 1px solid rgba(255, 255, 255, .3);
 	border-radius: 50%;
 	box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
 	-webkit-backdrop-filter: blur(12px) saturate(140%);
@@ -607,8 +606,8 @@ body .mainBannerTitle {
 
 .mainBannerFeatureIcon img {
 	display: block;
-	width: 24px;
-	height: 24px;
+	width: 32px;
+	height: 32px;
 }
 
 .mainBannerFeatureText {
