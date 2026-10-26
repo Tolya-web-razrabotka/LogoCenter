@@ -486,7 +486,7 @@ body.menuOpen {
 
 .mainBanner {
 	position: relative;
-	padding: 153px 0 118px;
+	padding: 153px 0 126px;
 	background: #1F2C3D;
 }
 
@@ -569,7 +569,7 @@ body .mainBannerTitle {
 }
 
 .mainBannerSubtitle {
-	margin-bottom: 56px;
+	margin-bottom: 50px;
 	font-size: 22px;
 	font-weight: 700;
 	line-height: 28px;
@@ -581,7 +581,7 @@ body .mainBannerTitle {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 20px 40px;
-	margin-bottom: 150px;
+	margin-bottom: 137px;
 }
 
 .mainBannerFeature {
@@ -621,52 +621,85 @@ body .mainBannerTitle {
 .mainBannerActions {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 16px;
-	margin-bottom: 40px;
+	gap: 20px;
+	margin: 0 0 42px -10px;
 }
 
 .mainBannerAction {
 	display: block;
-	padding: 8px;
-	background: linear-gradient(135deg, rgba(255, 255, 255, .3) 0%, rgba(255, 255, 255, .08) 100%);
-	border: 1px solid rgba(255, 255, 255, .3);
-	border-radius: 40px;
-	box-shadow: 0 12px 32px rgba(0, 0, 0, .18);
-	-webkit-backdrop-filter: blur(14px) saturate(140%);
-	backdrop-filter: blur(14px) saturate(140%);
+	padding: 10px;
+	background: rgba(255, 255, 255, .15);
+	border-radius: 80px;
+	-webkit-backdrop-filter: blur(7.5px);
+	backdrop-filter: blur(7.5px);
 	transition: transform .3s, box-shadow .3s, background .3s;
 }
 
 .mainBannerActionRent {
-	width: 318px;
+	width: 320px;
 }
 
 .mainBannerActionMaterials {
-	width: 346px;
+	width: 340px;
 }
 
 .mainBannerActionInner {
+	position: relative;
 	display: flex;
 	align-items: center;
-	gap: 14px;
-	height: 94px;
-	padding: 0 28px 0 18px;
-	border-radius: 32px;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35);
+	height: 90px;
+	border-radius: 80px;
 }
 
 .mainBannerActionRent .mainBannerActionInner {
-	background: linear-gradient(90deg, #FFA53A 0%, var(--orange) 100%);
+	gap: 30px;
+	padding: 0 30px 0 29px;
+	background: linear-gradient(90deg, #FFAF2F 0%, #FF7417 100%);
 }
 
 .mainBannerActionMaterials .mainBannerActionInner {
-	background: linear-gradient(90deg, #1D3F6B 0%, var(--blue) 100%);
+	gap: 19px;
+	padding: 0 30px 0 11px;
+	background: linear-gradient(90deg, #1C4361 0%, #10293C 100%);
+}
+
+.mainBannerActionArcs {
+	position: absolute;
+	top: 25px;
+	right: 8px;
+	width: 18px;
+	height: 40px;
+	pointer-events: none;
+}
+
+.mainBannerActionArcs img {
+	position: absolute;
+	display: block;
+}
+
+.mainBannerActionArcBig {
+	top: 0;
+	left: 0;
+	width: 9.4px;
+	height: 40px;
+}
+
+.mainBannerActionArcSmall {
+	top: 8px;
+	left: 14.36px;
+	width: 3.05px;
+	height: 24px;
 }
 
 .mainBannerActionImg {
 	display: block;
 	flex: 0 0 100px;
 	height: 70px;
+}
+
+.mainBannerActionRent .mainBannerActionImg {
+	flex-basis: 81px;
+	height: 65px;
 }
 
 .mainBannerActionImg img {
@@ -679,14 +712,14 @@ body .mainBannerTitle {
 .mainBannerActionContent {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 2px;
 }
 
 .mainBannerActionLabel {
 	position: relative;
 	padding-left: 9px;
 	font-size: 11px;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 14px;
 	text-transform: uppercase;
 }
@@ -703,7 +736,7 @@ body .mainBannerTitle {
 }
 
 .mainBannerActionRent .mainBannerActionLabel {
-	color: var(--blue);
+	color: #10293C;
 }
 
 .mainBannerActionMaterials .mainBannerActionLabel {
@@ -711,8 +744,8 @@ body .mainBannerTitle {
 }
 
 .mainBannerActionTitle {
-	font-size: 17px;
-	font-weight: 800;
+	font-size: 16px;
+	font-weight: 600;
 	line-height: 20px;
 	white-space: nowrap;
 	text-transform: uppercase;
@@ -721,7 +754,7 @@ body .mainBannerTitle {
 
 .mainBannerAction:hover,
 .mainBannerAction:focus {
-	background: linear-gradient(135deg, rgba(255, 255, 255, .4) 0%, rgba(255, 255, 255, .14) 100%);
+	background: rgba(255, 255, 255, .25);
 	box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
 	transform: translateY(-3px);
 	text-decoration: none;
@@ -2719,14 +2752,16 @@ body.modalOpen {
 		margin-bottom: 30px;
 	}
 
+	.mainBannerActions {
+		margin-left: -6px;
+	}
+
 	.mainBannerAction {
 		padding: 6px;
-		border-radius: 32px;
 	}
 
 	.mainBannerActionInner {
 		height: 84px;
-		border-radius: 26px;
 	}
 
 	.mainBannerActionImg {
