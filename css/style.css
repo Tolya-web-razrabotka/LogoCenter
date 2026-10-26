@@ -1084,11 +1084,11 @@ body .sectionTitleLarge {
 
 .consultImg {
 	position: absolute;
-	top: -47px;
-	left: 0;
+	right: 1035px;
+	bottom: -119px;
 	display: block;
-	width: 630px;
-	height: 560px;
+	width: min(630px, calc(100% - 780px));
+	height: auto;
 	pointer-events: none;
 	user-select: none;
 }
@@ -1099,12 +1099,15 @@ body .sectionTitleLarge {
 }
 
 .consultInner {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	gap: 30px;
 }
 
 .consultInfo {
+	position: relative;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -2362,6 +2365,10 @@ body.modalOpen {
 	.floatButtons {
 		right: 40px;
 	}
+
+	.consultImg {
+		width: min(630px, calc(100% - 885px));
+	}
 }
 
 @media screen and (max-width:1599px) {
@@ -2390,10 +2397,7 @@ body.modalOpen {
 	}
 
 	.consultImg {
-		top: auto;
-		bottom: 20px;
-		width: 26vw;
-		height: auto;
+		width: min(630px, calc(100% - 960px));
 	}
 
 	.aboutRight {
@@ -2498,6 +2502,11 @@ body.modalOpen {
 
 	.stepsItem:not(:last-child):after {
 		display: none;
+	}
+
+	.consultImg {
+		right: calc(50% + 330px);
+		width: calc(50% - 290px);
 	}
 }
 
