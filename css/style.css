@@ -2223,61 +2223,61 @@ body.modalOpen {
 
 .floatButtons {
 	position: fixed;
-	right: 92px;
+	right: 80px;
 	bottom: 60px;
 	z-index: 50;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
+	width: 86px;
+	padding: 17px 0 11px;
+	background: rgba(18, 50, 72, .2);
+	border-radius: 50px;
+	-webkit-backdrop-filter: blur(7.5px);
+	backdrop-filter: blur(7.5px);
 }
 
 .floatButtonsItem {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 44px;
-	height: 44px;
-	padding: 0;
-	background: linear-gradient(135deg, rgba(70, 70, 70, .6) 0%, rgba(30, 30, 30, .45) 100%);
-	border: 1px solid rgba(255, 255, 255, .2);
-	border-radius: 50%;
-	box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
-	-webkit-backdrop-filter: blur(12px) saturate(140%);
-	backdrop-filter: blur(12px) saturate(140%);
-	transition: background .3s, transform .3s;
+	display: block;
+	width: 78.86px;
+	height: 53px;
+	transition: opacity .3s;
 }
 
 .floatButtonsItem img {
 	display: block;
-	width: 22px;
-	height: 22px;
-}
-
-.floatButtonsItemChat {
-	width: 64px;
-	height: 64px;
-	margin-top: 6px;
-	background: #1FA45B;
-	border: none;
-	box-shadow: 0 0 0 7px rgba(255, 255, 255, .22), 0 10px 26px rgba(0, 0, 0, .2);
-}
-
-.floatButtonsItemChat img {
-	width: 28px;
-	height: 28px;
+	width: 78.86px;
+	height: 53.41px;
 }
 
 .floatButtonsItem:hover,
 .floatButtonsItem:focus {
-	background: var(--orange);
+	opacity: .75;
 	outline: none;
-	transform: translateY(-3px);
 }
 
-.floatButtonsItemChat:hover,
-.floatButtonsItemChat:focus {
-	background: #188A4B;
+.floatButtonsChat {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+	padding: 0;
+	background: #03B06E;
+	border-radius: 50%;
+	transition: background .3s;
+}
+
+.floatButtonsChat img {
+	display: block;
+	width: 26.82px;
+	height: 26.73px;
+}
+
+.floatButtonsChat:hover,
+.floatButtonsChat:focus {
+	background: #029A5F;
+	outline: none;
 }
 
 
@@ -2781,19 +2781,10 @@ body.modalOpen {
 	}
 
 	.floatButtons {
-		right: 20px;
-		bottom: 20px;
-	}
-
-	.floatButtonsItem {
-		width: 40px;
-		height: 40px;
-	}
-
-	.floatButtonsItemChat {
-		width: 56px;
-		height: 56px;
-		box-shadow: 0 0 0 6px rgba(255, 255, 255, .22), 0 10px 26px rgba(0, 0, 0, .2);
+		right: 15px;
+		bottom: 15px;
+		transform: scale(.8);
+		transform-origin: right bottom;
 	}
 
 	.services {
