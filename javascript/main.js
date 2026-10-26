@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+	// Фиксированная шапка
+
+	var $header = $('.header');
+	function toggleHeader() {
+		$header.toggleClass('headerFixed', $(window).scrollTop() > 10);
+	}
+	$(window).on('scroll', toggleHeader);
+	toggleHeader();
+
 	// Бургер-меню
 
 	function openMenu() {
