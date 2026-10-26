@@ -2575,6 +2575,10 @@ body.modalOpen {
 	.footerColRight {
 		margin-left: 0;
 	}
+
+	.footerColContacts {
+		align-items: flex-end;
+	}
 }
 
 @media screen and (max-width:1199px) {
@@ -3143,6 +3147,7 @@ body.modalOpen {
 	}
 
 	.footerColContacts {
+		align-items: flex-start;
 		gap: 20px;
 	}
 
@@ -3205,7 +3210,7 @@ body.modalOpen {
 	}
 
 	.aboutFeatures {
-		grid-template-columns: 1fr;
+		/* grid-template-columns: 1fr; */
 		gap: 24px;
 	}
 
