@@ -2235,28 +2235,36 @@ body.modalOpen {
 	border-radius: 50px;
 	-webkit-backdrop-filter: blur(7.5px);
 	backdrop-filter: blur(7.5px);
+	transition: background .4s, box-shadow .4s;
+}
+
+.floatButtons:hover {
+	background: rgba(18, 50, 72, .35);
+	box-shadow: 0 12px 30px rgba(16, 41, 60, .25);
 }
 
 .floatButtonsItem {
 	display: block;
 	width: 78.86px;
 	height: 53px;
-	transition: opacity .3s;
+	outline: none;
 }
 
 .floatButtonsItem img {
 	display: block;
 	width: 78.86px;
 	height: 53.41px;
+	transition: transform .4s cubic-bezier(.22, .61, .36, 1);
 }
 
-.floatButtonsItem:hover,
-.floatButtonsItem:focus {
-	opacity: .75;
-	outline: none;
+.floatButtonsItem:hover img,
+.floatButtonsItem:focus-visible img {
+	transform: scale(1.15);
+	transition-timing-function: cubic-bezier(.34, 1.56, .64, 1);
 }
 
 .floatButtonsChat {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2265,19 +2273,73 @@ body.modalOpen {
 	padding: 0;
 	background: #03B06E;
 	border-radius: 50%;
-	transition: background .3s;
+	outline: none;
+	transition: background .3s, transform .4s cubic-bezier(.22, .61, .36, 1);
+}
+
+.floatButtonsChat:before,
+.floatButtonsChat:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	border: 2px solid #03B06E;
+	border-radius: 50%;
+	filter: opacity(0);
+	pointer-events: none;
+	animation: floatButtonsWave 1.6s ease-out infinite;
+	transition: filter .4s;
+}
+
+.floatButtonsChat:after {
+	animation-delay: .8s;
 }
 
 .floatButtonsChat img {
 	display: block;
 	width: 26.82px;
 	height: 26.73px;
+	transition: transform .4s cubic-bezier(.22, .61, .36, 1);
 }
 
 .floatButtonsChat:hover,
-.floatButtonsChat:focus {
+.floatButtonsChat:focus-visible {
 	background: #029A5F;
-	outline: none;
+	transform: scale(1.06);
+	transition: background .3s, transform .4s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.floatButtonsChat:hover:before,
+.floatButtonsChat:hover:after,
+.floatButtonsChat:focus-visible:before,
+.floatButtonsChat:focus-visible:after {
+	filter: opacity(1);
+}
+
+.floatButtonsChat:hover img,
+.floatButtonsChat:focus-visible img {
+	transform: scale(1.12);
+}
+
+@keyframes floatButtonsWave {
+	0% {
+		opacity: .7;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.floatButtonsChat:before,
+	.floatButtonsChat:after {
+		display: none;
+	}
 }
 
 
