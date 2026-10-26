@@ -86,12 +86,24 @@ button {
 /* --- Header --- */
 
 .header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
+	z-index: 90;
+	max-width: 1920px;
+	margin: 0 auto;
 	padding: 25px 255px 0;
+	transition: padding .35s, background .35s, box-shadow .35s;
+}
+
+.header.headerFixed {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background: rgba(16, 41, 60, .92);
+	box-shadow: 0 10px 30px rgba(16, 41, 60, .2);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
 }
 
 .headerInner {
@@ -2515,6 +2527,11 @@ body.modalOpen {
 @media screen and (max-width:767px) {
 	.header {
 		padding: 15px 20px 0;
+	}
+
+	.header.headerFixed {
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 
 	.wrapper .container {
